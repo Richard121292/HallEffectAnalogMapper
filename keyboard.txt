@@ -1,0 +1,36 @@
+import hid
+import time
+
+# Pon aquí los IDs que viste en el administrador de dispositivos
+# (Usa 0x delante del número. Ejemplo: si es 3206 pon 0x3206)
+VENDOR_ID = 0x046D 
+PRODUCT_ID = 0xC547
+
+print("Buscando dispositivo...")
+
+try:
+    # Abrimos el dispositivo
+    h = hid.device()
+    h.open(VENDOR_ID, PRODUCT_ID)
+    h.set_nonblocking(1) # Para que no se congele esperando datos
+
+    print(f"¡CONECTADO! Fabricante: {h.get_manufacturer_string()}")
+    print("Presiona teclas y mira los números (Ctrl+C para salir)")
+    print("-" * 40)
+
+    while True:
+        # Leemos 64 bytes de datos
+        data = h.read(64)
+        if data:
+            # Imprimimos los datos en formato HEXADECIMAL
+            # Esto es lo que verías en Wireshark
+            hex_data = " ".join([f"{x:02X}" for x in data])
+            print(f"DATOS: {hex_data}")
+        
+        time.sleep(0.005)
+
+except IOError as e:
+    print(f"Error: {e}")
+    print("Revisa el VID/PID y asegúrate de cerrar el software de Mchose.")
+except KeyboardInterrupt:
+    print("\nSaliendo...")

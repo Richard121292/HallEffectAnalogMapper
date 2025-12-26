@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.swp
+*.log
+*.tmp
+*.bak
+.env
+.venv/
+venv/
+env/
+
+# Build artifacts
+build/
+dist/
+MchoseConfigurator/bin/
+MchoseConfigurator/obj/
+*.egg-info/
+
+# PyInstaller output
+*.manifest
+# Keep the spec file tracked; do not ignore HallAnalogMapper.spec
+
+# IDE/editor
+.vscode/
+.idea/
+*.user
+*.suo
+*.psess
+*.vsp
+*.vspscc
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local configs
+hall_config.json
+mchose_config.json
+
+# Archives
+*.rar
+*.zip

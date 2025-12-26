@@ -1,0 +1,18 @@
+<UserControl x:Class="MchoseConfigurator.KeyboardKey"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Name="Root"
+             Width="34" Height="34">
+    <Border x:Name="Border"
+            CornerRadius="4"
+            Background="#161b22"
+            BorderBrush="#30363d"
+            BorderThickness="1"
+            Padding="4"
+            Opacity="0.95">
+        <Grid>
+            <TextBlock x:Name="Label" Text="A" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#c9d1d9"/>
+            <Rectangle x:Name="Highlight" Fill="#58a6ff" Opacity="0" RadiusX="4" RadiusY="4"/>
+        </Grid>
+    </Border>
+</UserControl>
