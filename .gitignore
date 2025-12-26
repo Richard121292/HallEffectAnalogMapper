@@ -39,6 +39,14 @@ Thumbs.db
 # Local configs
 hall_config.json
 mchose_config.json
+MchoseConfigurator/
+Mchose*.py
+Mchose*.txt
+hid_dumper.py
+keyboard.py
+keyboard.txt
+a.py
+mchose_final.txt
 
 # Archives
 *.rar
